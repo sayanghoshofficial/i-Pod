@@ -1,16 +1,44 @@
 import React from "react";
+import ZingTouch from "zingtouch";
 import Display from "./Display";
 import Button from "./Button";
+import Song from "./assets/music/Laal_Ishq.mp3"
 
-const Ipod = () =>{
-    return (
-        <div className="ipod-body" style={styles.body}>
-            <Display/>
-            <Button/>
+class Ipod extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            activeItem : 'Now Playing',
+            activePage : 'Home',
+            enter: 0,
+            play: true
+        }
+    }
 
-    </div>
-    )
-    
+    rotateWheel = () =>{
+        var iPodButton = document.getElementsByClassName("ipod-button");
+        var activeRegion = new ZingTouch.Region(iPodButton);
+        console.log(activeRegion);
+    }
+    render() {
+        return(
+            <div className="ipod-body" style={styles.body}>
+                <audio className="audio">
+                    <source src={Song}></source>
+                </audio>
+            <Display 
+                activeItem={this.state.activeItem} 
+                activePage={this.state.activePage} 
+                audio={this.state.audio}
+            />
+            <Button
+                onMouseOver={this.rotateWheel}
+                onClick={this.changePageToHomeScreen}
+            />
+
+            </div>
+        )
+    }
 }
 
 const styles = {
