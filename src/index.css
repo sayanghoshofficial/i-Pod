@@ -17,7 +17,7 @@ code {
   text-align: center;
   align-items: center;
   justify-content: center;
-  -webkit-box-reflect: below 1px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
 }
 .keys{
   position: relative;
@@ -27,6 +27,7 @@ code {
   background: white;
   margin: 10px auto;
   overflow: hidden;
+  cursor:pointer;
   /*radius*/
   -webkit-border-radius: 100%;
      -moz-border-radius: 100%;
@@ -178,4 +179,30 @@ img.play-pause:hover{
 .screen{
   display:flex;
   flex-direction:column;
+}
+.dropbtn-div{
+  width: 85%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-bottom:30px; */
+  display: flex;
+  align-items: flex-start;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  align-items: center;
+}
+.dropbtn-div:after {
+  content: '>';
+  position: absolute;
+  opacity: 0;  
+  left: -40px;
+}
+.dropbtn-div:hover{
+  background-color: rgb(28, 139, 230);
+  color:white;
+  cursor: pointer;
+}
+.dropbtn-div:hover:after {
+  opacity: 1;
+  right: 10px;
 }

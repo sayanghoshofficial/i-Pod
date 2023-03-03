@@ -17,7 +17,7 @@ const styles = {
     body:{
         display:'flex',
         flexDirection:'column',
-        borderRadius:'15px 15px 15px 15px',
+        borderRadius:25,
         boxShadow: 'inset 0px 10px 90px 29px rgb(0 0 0 / 30%)',
         marginTop: 30,
         height: 470,

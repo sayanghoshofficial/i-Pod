@@ -8,7 +8,9 @@ const Display =() =>{
             <div className="main">
                 <div className="screen" style={styles.Screen}>
                     <div className="left-div" style={styles.Leftdiv}>
-                            <h5>iPad.js</h5>
+                            <div className="display-heading" style={styles.dropdown}>
+                                <h5>iPad Mini App</h5>
+                            </div>
                             <Dropdown/>
                     </div>
                     
@@ -36,10 +38,17 @@ const styles = ({
         height:'100%',
         display:'flex',
         flexDirection:'column',
-        justifyContent:'flex-start',
+        justifyContent:'start',
         backgroundColor:'white',
         opacity: '.7',
-        alignItems:'center'
-    }
-})
+        alignItems:'flex-start',
+        fontFamily:'cursive',
+        fontSize:20,
+    },
+   dropdown:{
+    width:'90%'
+   }
+}
+    
+)
 export default Display;
